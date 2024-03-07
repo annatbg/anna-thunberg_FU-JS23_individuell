@@ -1,0 +1,7 @@
+@use "/src/sass/main.scss" as *;
+
+.navbarList {
+  display: flex;
+  list-style-type: none;
+  border: 1px solid red;
+}

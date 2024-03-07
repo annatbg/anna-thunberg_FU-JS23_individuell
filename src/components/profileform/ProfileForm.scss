@@ -1,0 +1,18 @@
+@use "/src/sass/main.scss" as *;
+
+h1,
+h2,
+h3 {
+  @include heading-text($fancy-font);
+}
+
+p,
+label {
+  @include plain-text($plain-font);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}

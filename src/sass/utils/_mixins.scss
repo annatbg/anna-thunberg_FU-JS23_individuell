@@ -1,0 +1,7 @@
+@mixin heading-text($fancy-font) {
+  font-family: $fancy-font;
+}
+
+@mixin plain-text($plain-font) {
+  font-family: $plain-font;
+}

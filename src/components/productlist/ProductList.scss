@@ -1,0 +1,19 @@
+@use "/src/sass/main.scss" as *;
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  @include heading-text($fancy-font);
+}
+
+p {
+  @include plain-text($plain-font);
+}
