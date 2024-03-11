@@ -4,7 +4,7 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <div>
-      <img src={FooterImg} alt="footer image" />
+      <img className="footerImg" src={FooterImg} alt="footer image" />
     </div>
   );
 };

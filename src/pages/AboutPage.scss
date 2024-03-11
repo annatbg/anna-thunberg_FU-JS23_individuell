@@ -1,0 +1,37 @@
+@use "/src/sass/main.scss" as *;
+
+.aboutWrapper {
+  width: $body-width;
+  background-color: $pink;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutWrapper h1 {
+  margin-top: 20px;
+  margin-left: 32px;
+}
+
+.aboutWrapper p {
+  width: 311px;
+  line-height: 22.4px;
+  font-size: 16px;
+  margin-left: 32px;
+  padding: 5px;
+}
+
+.aboutWrapper span {
+  width: 311px;
+  line-height: 22.4px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.textWrapper {
+  margin: 20px 0;
+}
+
+.ownerInfo {
+  padding: 20px;
+}

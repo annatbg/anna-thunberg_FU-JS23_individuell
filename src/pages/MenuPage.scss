@@ -1,0 +1,17 @@
+@use "/src/sass/main.scss" as *;
+
+.menuWrapper {
+  background-color: $pink;
+  width: $body-width;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 50.4px;
+}

@@ -1,0 +1,19 @@
+@use "/src/sass/main.scss" as *;
+
+.cartWrapper {
+  position: relative;
+  background-color: $pink;
+  z-index: 1;
+}
+
+.cartWrapper::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 655px;
+  background-color: #000; /* Svart färg */
+  opacity: 0.7; /* 70% opacitet */
+  z-index: 0;
+}

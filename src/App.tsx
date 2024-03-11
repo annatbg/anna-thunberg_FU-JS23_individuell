@@ -1,11 +1,10 @@
 import "./sass/main.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Landing from "./pages/Landing";
-import Menu from "./pages/Menu";
-import Cart from "./pages/Cart";
-import About from "./pages/About";
-import Status from "./pages/Status";
-import Profile from "./pages/Profile";
+import Landing from "./pages/LandingPage";
+import Menu from "./pages/MenuPage";
+import Cart from "./pages/CartPage";
+import About from "./pages/AboutPage";
+import Status from "./pages/StatusPage";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route path="/about" element={<About iconOne />} />
           <Route path="/cart" element={<Cart iconOne iconTwo />} />
           <Route path="/status" element={<Status />} />
-          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </>

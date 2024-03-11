@@ -1,19 +1,47 @@
 @use "/src/sass/main.scss" as *;
 
-ul {
+.productList {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  width: 315px;
 }
 
-li {
-  margin: 1rem;
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+  // border: 1px solid red;
 }
 
-h1,
-h2,
-h3 {
-  @include heading-text($fancy-font);
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-p {
+.productList h1 {
+  font-family: $fancy-font;
+  font-size: 42px;
+}
+
+.productList h3 {
+  font-family: $fancy-font;
+  font-size: 23px;
+}
+
+.productList p {
   @include plain-text($plain-font);
+  font-size: 12px;
+}
+
+.plusIcon {
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
 }

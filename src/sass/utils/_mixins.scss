@@ -5,3 +5,20 @@
 @mixin plain-text($plain-font) {
   font-family: $plain-font;
 }
+
+@mixin body($body-width, $body-height) {
+  width: $body-width;
+  height: $body-height;
+}
+
+@mixin standard-button {
+  border: none;
+  border-radius: 50px;
+  font-size: 24px;
+  font-family: $fancy-font;
+  font-weight: 700;
+  cursor: pointer;
+  // width: 184px;
+  // height: 55px;
+  // padding: 10px;
+}

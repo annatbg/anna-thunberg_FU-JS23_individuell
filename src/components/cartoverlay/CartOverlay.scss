@@ -1,16 +1,117 @@
 @use "/src/sass/main.scss" as *;
 
 .overlayWrapper {
-  width: 30%;
   background-color: #ffffff;
+  width: 341px;
+  // height: 575px;
+  position: absolute;
+  top: 350px; /* Adjust as needed */
+  left: 70%; /* Adjust as needed */
+  transform: translate(-50%, -50%); /* Center the overlay */
+  z-index: 2;
+  border: 1px solid orange;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1,
-h2,
-h3 {
-  @include heading-text($fancy-font);
+.cartList {
+  width: 300px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cartItem {
+  width: 280px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6px;
+  padding: 5px;
+  border: 1px solid rgb(235, 233, 233);
+}
+
+.cartProduct {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlayWrapper h1 {
+  font-family: $fancy-font;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.overlayWrapper h2 {
+  font-family: $fancy-font;
+  font-size: 24px;
+}
+
+.overlayWrapper h3 {
+  font-family: $fancy-font;
+  font-size: 20px;
+  margin-bottom: 2px;
 }
 
 p {
   @include plain-text($plain-font);
+  color: #000000;
+  font-size: 14px;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // border: 1px blue solid;
+  width: fit-content;
+  height: fit-content;
+}
+
+.counterBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  background-color: #ffffff;
+  font-size: 16px;
+  // border: 1px blue solid;
+  // padding: 0;
+  cursor: pointer;
+}
+
+.bottomText {
+  margin-bottom: 30px;
+}
+
+.emptyCartBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkoutBtn {
+  @include standard-button;
+  background-color: #000000;
+  color: #ffffff;
+  width: 248px;
+  padding: 10px;
+  margin: 20px;
 }

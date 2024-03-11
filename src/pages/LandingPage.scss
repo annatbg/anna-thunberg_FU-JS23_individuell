@@ -1,0 +1,21 @@
+@use "/src/sass/main.scss" as *;
+
+.landingWrapper {
+  background-color: $green;
+  width: $body-width;
+  height: $body-height;
+}
+
+.bgImg {
+  width: $body-width;
+  height: $body-height;
+}
+
+.logoImg {
+  width: 257px;
+  height: 149px;
+  position: absolute;
+  top: 266px;
+  left: 58px;
+  cursor: pointer;
+}
