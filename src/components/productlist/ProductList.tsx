@@ -1,6 +1,6 @@
 import PlusIcon from "../../assets/plusicon.svg";
 import "./ProductList.scss";
-import { useCartStore } from "../../store/useCartStore";
+import { useCartStore, CartItem } from "../../store/useCartStore";
 
 const ProductList = () => {
   const { addCartItem } = useCartStore();
@@ -13,7 +13,7 @@ const ProductList = () => {
   return (
     <div className="productlistWrapper">
       <ul className="productList">
-        <li className="menuItem">
+        <li className="productItem">
           <div className="product">
             <img
               className="plusIcon"
@@ -34,7 +34,7 @@ const ProductList = () => {
           </div>
         </li>
 
-        <li className="menuItem">
+        <li className="productItem">
           <div className="product">
             <img
               className="plusIcon"
@@ -55,7 +55,7 @@ const ProductList = () => {
           </div>
         </li>
 
-        <li className="menuItem">
+        <li className="productItem">
           <div className="product">
             <img
               className="plusIcon"
@@ -76,7 +76,7 @@ const ProductList = () => {
           </div>
         </li>
 
-        <li className="menuItem">
+        <li className="productItem">
           <div className="product">
             <img
               className="plusIcon"
@@ -97,7 +97,7 @@ const ProductList = () => {
           </div>
         </li>
 
-        <li className="menuItem">
+        <li className="productItem">
           <div className="product">
             <img
               className="plusIcon"
@@ -117,7 +117,7 @@ const ProductList = () => {
           </div>
         </li>
 
-        <li className="menuItem">
+        <li className="productItem">
           <div className="product">
             <img
               className="plusIcon"

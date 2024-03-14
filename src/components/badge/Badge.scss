@@ -1,0 +1,21 @@
+@use "/src/sass/main.scss" as *;
+
+.badgeCartItems {
+  background-color: $orange;
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 340px;
+  top: 10px;
+  padding: 10px;
+}
+
+.badgeCartItems p {
+  color: #ffff;
+  font-size: 14px;
+  font-family: $fancy-font;
+}

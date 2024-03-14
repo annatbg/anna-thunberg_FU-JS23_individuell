@@ -1,21 +1,45 @@
 import "./CartOverlay.scss";
 import { useCartStore } from "../../store/useCartStore";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 const CartOverlay = () => {
-  const { cartItems, increment, decrement, emptyCart } = useCartStore();
+  const { cartItems, increment, decrement, emptyCart, closeCart, isCartOpen } =
+    useCartStore();
+
+  const overlayRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        overlayRef.current &&
+        !overlayRef.current.contains(event.target as Node)
+      ) {
+        closeCart();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeCart]);
 
   const navigate = useNavigate();
 
   const totalPrice = () => {
     return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
+      (total, item) => total + item.price * (item.quantity || 0),
       0
     );
   };
 
   return (
-    <div className="overlayWrapper">
+    <div
+      className={`overlayWrapper ${isCartOpen ? "open" : ""}`}
+      ref={overlayRef}
+    >
       <h1>Din beställning</h1>
       <ul className="cartList">
         {cartItems.map((item) => (
@@ -42,9 +66,16 @@ const CartOverlay = () => {
         <p>inkl moms + drönarleverans</p>
       </div>
 
-      <button className="emptyCartBtn" onClick={emptyCart}>
-        Empty Cart
-      </button>
+      <div className="cartBtns">
+        <button className="closeCartBtn" onClick={closeCart}>
+          Close Cart
+        </button>
+
+        <button className="emptyCartBtn" onClick={emptyCart}>
+          Empty Cart
+        </button>
+      </div>
+
       <button
         className="checkoutBtn"
         onClick={() => setTimeout(() => navigate("/status"), 1000)}

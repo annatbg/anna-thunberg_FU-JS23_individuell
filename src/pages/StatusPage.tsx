@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Status = () => {
   const randomNumber = () => {
-    return Math.floor(Math.random() * 60) + 1;
+    return Math.floor(Math.random() * 30) + 5;
   };
 
   const navigate = useNavigate();

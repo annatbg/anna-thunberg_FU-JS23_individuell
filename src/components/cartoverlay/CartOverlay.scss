@@ -2,18 +2,20 @@
 
 .overlayWrapper {
   background-color: #ffffff;
-  width: 341px;
+  width: 331px;
+  min-height: 550px;
   // height: 575px;
   position: absolute;
-  top: 350px; /* Adjust as needed */
-  left: 70%; /* Adjust as needed */
-  transform: translate(-50%, -50%); /* Center the overlay */
+  top: 50px; /* Adjust as needed */
+  // left: 40%; /* Adjust as needed */
+  transform: translateX(1%); /* Center the overlay */
   z-index: 2;
-  border: 1px solid orange;
+  // border: 1px solid orange;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .cartList {
@@ -90,21 +92,27 @@ p {
 }
 
 .bottomText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 30px;
 }
 
-.emptyCartBtn {
+.cartBtns {
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.emptyCartBtn,
+.closeCartBtn {
   width: fit-content;
   height: fit-content;
   border: none;
   border-radius: 50px;
   padding: 10px;
   color: #000000;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
+  margin: 2px;
 }
 
 .checkoutBtn {
