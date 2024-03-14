@@ -4,4 +4,5 @@ import { ReactNode } from "react";
 export type IconProps = {
   iconOne?: ReactNode;
   iconTwo?: ReactNode;
+  badge?: ReactNode;
 };

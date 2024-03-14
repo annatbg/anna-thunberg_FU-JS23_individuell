@@ -1,32 +1,19 @@
 import "./CartOverlay.scss";
 import { useCartStore } from "../../store/useCartStore";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef } from "react";
 
 const CartOverlay = () => {
-  const { cartItems, increment, decrement, emptyCart, closeCart, isCartOpen } =
+  const { cartItems, increment, decrement, emptyCart, closeCart } =
     useCartStore();
 
-  const overlayRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        overlayRef.current &&
-        !overlayRef.current.contains(event.target as Node)
-      ) {
-        closeCart();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [closeCart]);
-
   const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    closeCart();
+    setTimeout(() => {
+      navigate(path);
+    }, 500);
+  };
 
   const totalPrice = () => {
     return cartItems.reduce(
@@ -36,10 +23,7 @@ const CartOverlay = () => {
   };
 
   return (
-    <div
-      className={`overlayWrapper ${isCartOpen ? "open" : ""}`}
-      ref={overlayRef}
-    >
+    <div className="overlayWrapper">
       <h1>Din beställning</h1>
       <ul className="cartList">
         {cartItems.map((item) => (
@@ -78,7 +62,7 @@ const CartOverlay = () => {
 
       <button
         className="checkoutBtn"
-        onClick={() => setTimeout(() => navigate("/status"), 1000)}
+        onClick={() => handleNavigation("/status")}
       >
         Take my money!
       </button>

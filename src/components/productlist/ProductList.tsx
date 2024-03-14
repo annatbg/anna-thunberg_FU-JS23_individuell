@@ -7,7 +7,6 @@ const ProductList = () => {
 
   const handleAddToCart = (item: CartItem) => {
     addCartItem(item);
-    console.log("added item", item);
   };
 
   return (

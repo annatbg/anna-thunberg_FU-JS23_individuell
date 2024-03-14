@@ -19,7 +19,7 @@ const Status = () => {
       </h3>
       <button
         className="statusBtn"
-        onClick={() => setTimeout(() => navigate("/"), 1000)}
+        onClick={() => setTimeout(() => navigate("/"), 500)}
       >
         Ok, cool!
       </button>

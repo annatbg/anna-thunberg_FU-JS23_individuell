@@ -4,12 +4,8 @@ import CartIcon from "../assets/carticon.svg";
 import ProductList from "../components/productlist/ProductList";
 import Footer from "../components/footer/Footer";
 import "./MenuPage.scss";
-import CartOverlay from "../components/cartoverlay/CartOverlay";
-import { useCartStore } from "../store/useCartStore";
 
 const Menu = () => {
-  const { isCartOpen } = useCartStore();
-
   return (
     <div className="menuWrapper">
       <Header
@@ -18,7 +14,7 @@ const Menu = () => {
       />
       <h1>Meny</h1>
       <ProductList />
-      {isCartOpen && <CartOverlay />}
+
       <Footer />
     </div>
   );
